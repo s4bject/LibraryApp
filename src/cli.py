@@ -5,6 +5,10 @@ class LibraryCLI:
     """Интерфейс командной строки."""
 
     def __init__(self, library):
+        """
+        Инициализирует CLI с объектом библиотеки.
+        :param library: Объект класса Library.
+        """
         self.library = library
 
     def run(self):

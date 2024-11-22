@@ -7,12 +7,18 @@ class Persistence(ABC):
 
     @abstractmethod
     def load(self):
-        """Загружает данные из хранилища."""
+        """
+        Загружает данные из хранилища.
+        :return: Список данных из хранилища.
+        """
         pass
 
     @abstractmethod
     def save(self, books):
-        """Сохраняет данные в хранилище."""
+        """
+        Сохраняет данные в хранилище.
+        :param books: Список книг для сохранения.
+        """
         pass
 
 
@@ -20,6 +26,10 @@ class JSONPersistence(Persistence):
     """Реализация хранилища на основе JSON-файла."""
 
     def __init__(self, storage_file="library.json"):
+        """
+        Инициализирует хранилище с указанием файла для работы.
+        :param storage_file: Имя JSON-файла для хранения данных.
+        """
         self.storage_file = storage_file
 
     def load(self):

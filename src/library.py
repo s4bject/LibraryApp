@@ -9,7 +9,10 @@ class Library:
         self.books = self.__load_books()
 
     def __load_books(self):
-        """Загружает книги из хранилища с обработкой ошибок."""
+        """
+        Инициализирует библиотеку и загружает книги из хранилища.
+        :param persistence: Объект хранилища для загрузки и сохранения данных.
+        """
         try:
             data = self.persistence.load()
             return [Book(**book) for book in data]
